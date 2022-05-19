@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import './index.css';
+import Read from './components/read/Read';
+import Create from './components/create/Create';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Update from './components/update/Update';
+
+import {Link} from 'react-router-dom';
+
+const App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+   <Router> 
+   <div className="crud">
+        <h3>CRUD operation</h3>
+      </div>
+      <br/>
+      
+     <Routes>  
+     <Route  path="/read" element={<Read />}> </Route>
+     <Route  path="/create" element={<Create/>}> </Route>
+      <Route path="/update" element={<Update />}> </Route>
+      
+    </Routes>
+    </Router>
     </div>
-  );
+  )
 }
-
-export default App;
+  export default App;
+  
